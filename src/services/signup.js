@@ -19,133 +19,132 @@ module.exports.createUser = async (data) => {
 
 const checkName = (str) => {
     return new Promise((resolve, reject) => {
+        // let result = false;
+        // if(result){
+        //     resolve(true);
+        // }else{
+        //     resolve(false);
+        // }
+        let params = {
+            'user-id': 'eabcdcstr',
+            'api-key': '7LN5EZyZdVeKcipmsW3gMTm3gxDNf501EkOES2lDSceKk8ro',
+            'content': `${str}`
+        };
 
-        let result = false;
-        if(result){
-            resolve(true);
-        }else{
-            resolve(false);
-        }
-        // let params = {
-        //     'user-id': 'eabcdcstr',
-        //     'api-key': '7LN5EZyZdVeKcipmsW3gMTm3gxDNf501EkOES2lDSceKk8ro',
-        //     'content': `${str}`
-        // };
-
-        // request.post(
-        //     {url:'https://neutrinoapi.net/bad-word-filter', form: params},
-        //     function (error, response, body) {
-        //         if(!error && response.statusCode == 200) {
-        //             let result = JSON.parse(body);
-        //             if(result['is-bad'] == false){
-        //                 resolve(true)
-        //             }else{
-        //                 resolve(false)
-        //             }  
-        //         }
-        //     }
-        // );
+        request.post(
+            {url:'https://neutrinoapi.net/bad-word-filter', form: params},
+            function (error, response, body) {
+                if(!error && response.statusCode == 200) {
+                    let result = JSON.parse(body);
+                    if(result['is-bad'] == false){
+                        resolve(true)
+                    }else{
+                        resolve(false)
+                    }  
+                }
+            }
+        );
     })
 }
 
 const checkEmail = (email) => {
     return new Promise((resolve, reject) => {
-        let result = true;
-        if(result){
-            resolve(true);
-        }else{
-            resolve(false);
-        }
-        // if(email.includes('@google.com')){
+        // let result = true;
+        // if(result){
+        //     resolve(true);
+        // }else{
         //     resolve(false);
         // }
+        if(email.includes('@google.com')){
+            resolve(false);
+        }
         
-        // let params = {
-        //     'user-id': 'eabcdcstr',
-        //     'api-key': '7LN5EZyZdVeKcipmsW3gMTm3gxDNf501EkOES2lDSceKk8ro',
-        //     'email': `${email}`
-        // };
+        let params = {
+            'user-id': 'eabcdcstr',
+            'api-key': '7LN5EZyZdVeKcipmsW3gMTm3gxDNf501EkOES2lDSceKk8ro',
+            'email': `${email}`
+        };
 
-        // request.post(
-        //     {url:'https://neutrinoapi.net/email-validate', form: params},
-        //     function (error, response, body) {
-        //         if(!error && response.statusCode == 200) {
-        //             let result = JSON.parse(body);
-        //             if(result['valid'] == true){
-        //                 resolve(true)
-        //             }else{
-        //                 resolve(false)
-        //             }  
-        //         }
-        //     }
-        // );
+        request.post(
+            {url:'https://neutrinoapi.net/email-validate', form: params},
+            function (error, response, body) {
+                if(!error && response.statusCode == 200) {
+                    let result = JSON.parse(body);
+                    if(result['valid'] == true){
+                        resolve(true)
+                    }else{
+                        resolve(false)
+                    }  
+                }
+            }
+        );
     })
     
 }
 
 const checkPhoneNumber = (num) => {
     return new Promise((resolve, reject) => {
-        let result = true;
-        if(result){
-            resolve(true);
-        }else{
-            resolve(false);
-        }
-        // let params = {
-        //     'user-id': 'eabcdcstr',
-        //     'api-key': '7LN5EZyZdVeKcipmsW3gMTm3gxDNf501EkOES2lDSceKk8ro',
-        //     'number': `${num}`,
-        //     'country-code': '+63'
-        // };
+        // let result = true;
+        // if(result){
+        //     resolve(true);
+        // }else{
+        //     resolve(false);
+        // }
+        let params = {
+            'user-id': 'eabcdcstr',
+            'api-key': '7LN5EZyZdVeKcipmsW3gMTm3gxDNf501EkOES2lDSceKk8ro',
+            'number': `${num}`,
+            'country-code': '+63'
+        };
 
-        // request.post(
-        //     {url:'https://neutrinoapi.net/phone-validate', form: params},
-        //     function (error, response, body) {
-        //         if(!error && response.statusCode == 200) {
-        //             let result = JSON.parse(body);
-        //             if(result['valid'] == true){
-        //                 resolve(true)
-        //             }else{
-        //                 resolve(false)
-        //             }  
-        //         }
-        //     }
-        // );
+        request.post(
+            {url:'https://neutrinoapi.net/phone-validate', form: params},
+            function (error, response, body) {
+                if(!error && response.statusCode == 200) {
+                    let result = JSON.parse(body);
+                    if(result['valid'] == true){
+                        resolve(true)
+                    }else{
+                        resolve(false)
+                    }  
+                }
+            }
+        );
     })
     
 }
 
 const checkWebsiteUrl = (weburl) => {
     return new Promise((resolve, reject) => {
-        let result = false;
-        if(result){
-            resolve(true);
-        }else{
-            resolve(false);
-        }
-        // if(weburl.includes('?')){
+        // let result = false;
+        // if(result){
+        //     resolve(true);
+        // }else{
         //     resolve(false);
         // }
-        // let params = {
-        //     'user-id': 'eabcdcstr',
-        //     'api-key': '7LN5EZyZdVeKcipmsW3gMTm3gxDNf501EkOES2lDSceKk8ro',
-        //     'url': `${weburl}`,
-        //     'ignore-certificate-errors': false
-        // };
+        if(weburl.includes('?')){
+            resolve(false);
+        }
+        let params = {
+            'user-id': 'eabcdcstr',
+            'api-key': '7LN5EZyZdVeKcipmsW3gMTm3gxDNf501EkOES2lDSceKk8ro',
+            'url': `${weburl}`,
+            'ignore-certificate-errors': false
+        };
 
-        // request.post(
-        //     {url:'https://neutrinoapi.net/url-info', form: params},
-        //     function (error, response, body) {
-        //         if(!error && response.statusCode == 200) {
-        //             let result = JSON.parse(body);
-        //             if(result['valid'] == true){
-        //                 resolve(true)
-        //             }else{
-        //                 resolve(false)
-        //             }  
-        //         }
-        //     }
-        // );
+        request.post(
+            {url:'https://neutrinoapi.net/url-info', form: params},
+            function (error, response, body) {
+                if(!error && response.statusCode == 200) {
+                    let result = JSON.parse(body);
+                    if(result['valid'] == true){
+                        resolve(true)
+                    }else{
+                        resolve(false)
+                    }  
+                }
+            }
+        );
     })
     
 }
