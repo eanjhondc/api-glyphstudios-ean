@@ -19,12 +19,15 @@ module.exports.createUser = async (data) => {
 
 const checkName = (str) => {
     return new Promise((resolve, reject) => {
+
+        // FOR TESTING PURPOSES
         // let result = false;
         // if(result){
         //     resolve(true);
         // }else{
         //     resolve(false);
         // }
+
         let params = {
             'user-id': 'eabcdcstr',
             'api-key': '7LN5EZyZdVeKcipmsW3gMTm3gxDNf501EkOES2lDSceKk8ro',
@@ -49,12 +52,15 @@ const checkName = (str) => {
 
 const checkEmail = (email) => {
     return new Promise((resolve, reject) => {
+
+        // FOR TESTING PURPOSES
         // let result = true;
         // if(result){
         //     resolve(true);
         // }else{
         //     resolve(false);
         // }
+
         if(email.includes('@google.com')){
             resolve(false);
         }
@@ -84,12 +90,15 @@ const checkEmail = (email) => {
 
 const checkPhoneNumber = (num) => {
     return new Promise((resolve, reject) => {
+
+        // FOR TESTING PURPOSES
         // let result = true;
         // if(result){
         //     resolve(true);
         // }else{
         //     resolve(false);
         // }
+
         let params = {
             'user-id': 'eabcdcstr',
             'api-key': '7LN5EZyZdVeKcipmsW3gMTm3gxDNf501EkOES2lDSceKk8ro',
@@ -116,12 +125,15 @@ const checkPhoneNumber = (num) => {
 
 const checkWebsiteUrl = (weburl) => {
     return new Promise((resolve, reject) => {
+
+        // FOR TESTING PURPOSES
         // let result = false;
         // if(result){
         //     resolve(true);
         // }else{
         //     resolve(false);
         // }
+        
         if(weburl.includes('?')){
             resolve(false);
         }
