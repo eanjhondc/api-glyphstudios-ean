@@ -18,12 +18,9 @@ router.post('/signup', async (req, res) => {
     try{
         let result = await Signup.createUser(req.body);
         return res.success(response(SUCCESS, '', result));
-        
     }catch(err){
-        return res.error(response(INTERNAL_SERVER_ERROR,'',err));
+        return res.error(response(VALIDATION_ERROR,'',err));
     }
-    
-    
 })
 
 module.exports = router;
